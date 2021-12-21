@@ -1,0 +1,18 @@
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 4.5rem;
+  background-color: royalblue;
+
+  .title {
+    color: white;
+    font-size: 3rem;
+    min-width: fit-content;
+    margin: auto;
+  }
+}
+
+.body {
+  height: 100%;
+}
