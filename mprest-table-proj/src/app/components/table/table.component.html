@@ -1,0 +1,41 @@
+<div class="container">
+
+  <button class="button" (click)="addNewLine()">Add A New Line +</button>
+
+  <div class="img-container">
+    <div *ngIf="selectedImg === ''; else showImg">
+      <h1>Please Select A Line</h1>
+    </div>
+    <ng-template #showImg>
+      <img src="{{selectedImg}}">
+     </ng-template>
+  </div>
+
+  <div class="table-container">
+
+    <div class="table-header" >
+      <p class="image">Image</p>
+      <p class="id">Id</p>
+      <p class="title">Title</p>
+      <p class="album-id">Album Id</p>
+      <p class="controls">Controls</p>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" #box (keyup)="filterList(box.value)">
+    </div>
+
+    <div class="table-body">
+      <cdk-virtual-scroll-viewport itemSize="50" class="virtual-scroll">
+        <div *cdkVirtualFor="let line of linesForDisplay; let i = index">
+          <app-table-line [lineData]="line"
+                          [index]="i"
+                          (lineDataChange)="changeLineTitle($event)"
+                          (deleteLine)="deleteLine($event)"
+                          (click)="displayBigImg(i)">
+          </app-table-line>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
+</div>
