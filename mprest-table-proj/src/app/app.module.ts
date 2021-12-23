@@ -6,13 +6,15 @@ import { TableComponent } from './components/table/table.component';
 import { TableLineComponent } from './components/table-line/table-line.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ScrollingModule} from "@angular/cdk/scrolling";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewLineComponent } from './components/new-line/new-line.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     TableLineComponent,
+    NewLineComponent,
 
   ],
   imports: [
@@ -20,6 +22,7 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     ScrollingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

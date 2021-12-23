@@ -1,0 +1,9 @@
+
+<div class="form-container">
+  <form class="form" [formGroup]="myForm">
+    <input type="text" formControlName="id" class="id">
+    <input type="text" formControlName="title" class="title">
+    <input type="text" formControlName="albumId" class="albumId">
+    <button (click)="onSubmit()" class="submit"></button>
+  </form>
+</div>

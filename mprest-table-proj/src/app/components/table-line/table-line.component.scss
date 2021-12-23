@@ -64,13 +64,16 @@
     .delete {
       width: 3rem;
       height: 3rem;
-      background-color: red;
+      //background-color: red;
+      background: url("./../../../assets/trash-bin.png") no-repeat;
     }
 
     .edit {
       width: 3rem;
       height: 3rem;
-      background-color: blue;
+      //background-color: blue;
+      background: url("./../../../assets/editing.png") no-repeat;
+
     }
   }
 

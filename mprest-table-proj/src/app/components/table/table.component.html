@@ -22,8 +22,10 @@
     </div>
 
     <div class="search-bar">
-      <input type="text" #box (keyup)="filterList(box.value)">
+      <input type="text" placeholder="Search by Id / Album-Id" #box (keyup)="filterList(box.value)">
     </div>
+
+
 
     <div class="table-body">
       <cdk-virtual-scroll-viewport itemSize="50" class="virtual-scroll">
@@ -37,5 +39,11 @@
         </div>
       </cdk-virtual-scroll-viewport>
     </div>
+    <div class="add-line" *ngIf="isAddNewLine">
+      <app-new-line (newLineData)="addNewLineData($event)"></app-new-line>
+    </div>
   </div>
+
+
+
 </div>

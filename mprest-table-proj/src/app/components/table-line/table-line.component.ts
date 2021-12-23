@@ -26,9 +26,7 @@ export class TableLineComponent implements OnChanges{
     }
   }
 
-  onSubmit(info: any): void {
 
-  }
 
   action(action: string): void {
     // @ts-ignore

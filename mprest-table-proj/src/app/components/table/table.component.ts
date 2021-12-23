@@ -12,9 +12,23 @@ export class TableComponent {
   lines: TableDataIfc[] = [];
   linesForDisplay: TableDataIfc[] = [];
   selectedImg: string = '';
+  isAddNewLine: boolean ;
 
   constructor(private getDataService: GetTableDataService) {
     this.getTableData();
+  }
+
+  addNewLineData(newLine: LineDataIfc): void {
+    this.lines.unshift({
+      id: newLine.id,
+      title: newLine.text,
+      albumId: newLine.albumId,
+      imgPath: '',
+      thumbImgPath: '',
+    })
+
+    this.linesForDisplay = [...this.lines];
+    this.isAddNewLine = false;
   }
 
   deleteLine(line: LineToDeleteIfc): void {
@@ -26,7 +40,7 @@ export class TableComponent {
   }
 
   addNewLine(): void {
-
+    this.isAddNewLine = true;
   }
 
   getTableData() {
